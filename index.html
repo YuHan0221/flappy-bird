@@ -5,12 +5,19 @@
     <title>flypi bird</title>
     <style>
         select {
-            display: block;
             width:65px;
             height:30px;
-            margin-bottom:20px;
+            position:fixed;
+            left:50%;
+            bottom:100px;
+            margin:10px auto;
             border-radius: 10px;
             background-color: orangered;
+            outline:none;
+        }
+        .container {
+            margin:0 auto;
+            width:800px;
         }
     </style>
     <script src="./js/fb.js"></script>
@@ -27,7 +34,9 @@
     <option value ="300">normal</option>
     <option value="200">difficult</option>
 </select>
-<canvas id="cas" width="800" height="600" style="border: 1px solid blue;margin:0 auto"></canvas>
+<div class="container">
+    <canvas id="cas" width="800" height="600" style="border: 1px solid blue;margin:0 auto"></canvas>
+</div>
 <script type="text/javascript">
     var cas = document.getElementById('cas');
     var ctx = cas.getContext('2d');
