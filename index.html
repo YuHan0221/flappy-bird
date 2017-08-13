@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flypi bird</title>
+    <style>
+        select {
+            display: block;
+            width:65px;
+            height:30px;
+            margin-bottom:20px;
+            border-radius: 10px;
+            background-color: orangered;
+        }
+    </style>
+    <script src="./js/fb.js"></script>
+    <script src="./js/bird.js"></script>
+    <script src="./js/sky.js"></script>
+    <script src="./js/land.js"></script>
+    <script src="./js/pipe.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/jquery-3.2.1.js"></script>
+</head>
+<body>
+<select id="sel">
+    <option value ="400">simple</option>
+    <option value ="300">normal</option>
+    <option value="200">difficult</option>
+</select>
+<canvas id="cas" width="800" height="600" style="border: 1px solid blue;margin:0 auto"></canvas>
+<script type="text/javascript">
+    var cas = document.getElementById('cas');
+    var ctx = cas.getContext('2d');
+    var sp;
+    var game = new FB.Game({
+        ctx:ctx,
+        space:300
+    });
+    game.init();
+    $('#sel').on('change', function (e) {
+        sp=$('#sel').val();
+        // console.log(typeof sp);
+        var game = new FB.Game({
+            ctx:ctx,
+            space:parseInt(sp)
+        });
+        game.init();
+    });
+
+</script>
+</body>
+</html>
